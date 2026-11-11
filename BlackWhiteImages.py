@@ -1,5 +1,7 @@
 from PIL import Image
 from pathlib import Path
+import time
+start_time = time.time()
 
 imagePath = Path(__file__).parent / "testImage.jpg"
 myImage = Image.open(imagePath)
@@ -48,4 +50,5 @@ for i in range(imageY):
         
 
 print("Done")
-myImage2.save("Testing/greyscale.jpg")
+print("Completed in %s seconds" % (round(time.time() - start_time, 4)))
+myImage2.save("greyscale.jpg")
